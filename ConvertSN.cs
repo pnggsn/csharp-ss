@@ -15,12 +15,7 @@ namespace ConvertSN
             return a + 74;
         }
 
-        /// <summary>
-        ///     Convert integer part of a number
-        /// </summary>
-        /// <param name="at">from which number system to convert</param>
-        /// <param name="bt">in which number system to convert</param>
-        /// <returns>whole part</returns>
+
         private static string Whole_number(int at, int bt)
         {
             string ex = "";
@@ -41,12 +36,6 @@ namespace ConvertSN
             return ex;
         }
 
-        /// <summary>
-        ///     Convert fractional part of number
-        /// </summary>
-        /// <param name="at">from which number system to convert</param>
-        /// <param name="bt">in which number system to convert</param>
-        /// <returns>fractional part</returns>
         private static string D_number(int at, int bt)
         {
             string ex;
@@ -58,7 +47,6 @@ namespace ConvertSN
             {
                 ex = "";
                 for (int i = _temps.Length - 1; i >= 0; --i) tempd = (CharToInt(_temps[i]) + tempd) / at;
-                //while (Math.Round(tempd, MidpointRounding.AwayFromZero) > 0) tempd *= 0.1;
                 while (tempd > 0)
                 {
                     tempd *= bt;
@@ -70,13 +58,6 @@ namespace ConvertSN
             return ex;
         }
 
-        /// <summary>
-        ///     Convert from any number system to any
-        /// </summary>
-        /// <param name="fromNs">from which number system to convert</param>
-        /// <param name="toNs">in which number system to convert</param>
-        /// <param name="numberS">translated number</param>
-        /// <returns>Converted number</returns>
         public static string Toany(int fromNs, int toNs, string numberS)
         {
             if (numberS == "") return "EmptyString";
